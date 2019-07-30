@@ -21,7 +21,7 @@ public class App {
 			Document doc = Jsoup.connect("https://stackabuse.com/web-scraping-the-java-way/").get();
 			
 			// find all that contains href
-			Elements elements = doc.getElementsByAttribute("href");
+			Elements elements = doc.getElementsByAttribute("href"); 
 			
 			List<Item> itemsList = new ArrayList(); // since there is a list, it can now be exported
 			
