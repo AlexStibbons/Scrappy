@@ -57,6 +57,7 @@ public class DarkScraping {
 			doc.setBaseUri(baseUri);
 			
 			pageLinks.add(url);
+			System.out.println("Added: " + url + "\n");
 
 			Elements olderPosts = doc.getElementsByClass("next-posts");
 			String olderPostLink = "";
@@ -67,12 +68,13 @@ public class DarkScraping {
 					// BECAUSE NEXT-POSTS EXISTS BUT HAS NO CHILDREN
 					if (!link.children().isEmpty()) {
 						olderPostLink = link.children().first().attr("abs:href"); 
-						pageLinks.add(olderPostLink);
-						System.out.println("This is the older posts link: " + olderPostLink );		
+						//pageLinks.add(olderPostLink);
+						//System.out.println("This is the older posts link: " + olderPostLink );		
 						getLinks(olderPostLink, baseUri);
 					}	
 				}
 			}
+			
 
 		} catch (IOException e) {
 			e.getMessage();
@@ -82,17 +84,19 @@ public class DarkScraping {
 	}
 	
 	public void getStories() {
+		
 		pageLinks.forEach( page -> {
 			Document document;
 			try {
+				
 				document = Jsoup.connect(page).get();
-				Elements storyBlocks = document.getElementsByClass("secondary-article");
-				// the storyBlocks contain h2 posttile with link, h4 byline with link, story extract, etc.
-				// need to extract story title, author name, link to story
+				Elements storyBlocks = document.getElementsByTag("hgroup");
 				
 				for (Element e : storyBlocks) {
-					String title = e.select("h2.posttitle").text();
-					System.out.println(title);
+					String title = e.select("h2").text();
+					String link = e.select("h2 > a").attr("href");
+					String author = e.select(".byline").text();
+					System.out.println("Story: " + title + ", byline: " + author + ", link: " + link + "\n");
 				}
 						
 			} catch (IOException e) {
@@ -100,7 +104,7 @@ public class DarkScraping {
 			}
 			
 		}				
-				);
+				);		
 	}
 
 }
