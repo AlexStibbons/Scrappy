@@ -9,7 +9,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import scrappy.models.Item;
+import scrappy.models.Story;
 
 public class App {
 
@@ -23,17 +23,18 @@ public class App {
 			// find all that contains href
 			Elements elements = doc.getElementsByAttribute("href"); 
 			
-			List<Item> itemsList = new ArrayList(); // since there is a list, it can now be exported
+			List<Story> itemsList = new ArrayList(); // since there is a list, it can now be exported
 			
 			for (Element e : elements) {
 				if (!e.ownText().isEmpty()) {
-					Item item = new Item(e.ownText(), e.absUrl("href"));
+					Story item = new Story(e.ownText(), "no author", e.absUrl("href"));
 					itemsList.add(item);
 				}
 			}
 			
 			itemsList.stream()
-					.forEach(i -> ExportTo.console(i.getText() + ": " + i.getUrl() + "\n"));
+					//.forEach(i -> ExportTo.console(i.getTitle() + ": " + i.getLink() + "\n"));
+					.forEach(i -> System.out.println(i.toString()));
 			
 		} catch (IOException e) {
 			System.out.println("No connection\n");

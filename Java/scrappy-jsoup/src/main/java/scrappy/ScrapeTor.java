@@ -8,7 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import scrappy.models.Item;
+import scrappy.models.Story;
 
 public class ScrapeTor {
 
@@ -26,11 +26,10 @@ public class ScrapeTor {
 			Elements titles = doc.getElementsByClass("entry-title");
 			// now a title is:
 			// <h2 class="entry-title"> <a href="https://www.tor.com/2019/07/10/for-he-can-creep-siobhan-carroll/">For He Can Creep</a> </h2>
-			// this has a CHILD which is a href
+			// now select the link within h2 and get the url
 			
 			for (Element title : titles) {
-				//Item linkItem = new Item(title.text(), title.children().first().attr("abs:href"));
-				System.out.println(title.text() + " LINK:" + title.children().first().attr("abs:href"));
+				System.out.println(title.text() + " LINK:" + title.select("h2 > a").attr("abs:href"));
 			}
 			
 		} catch (IOException e) {
