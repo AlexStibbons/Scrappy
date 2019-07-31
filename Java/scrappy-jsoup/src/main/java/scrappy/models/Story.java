@@ -45,7 +45,7 @@ public class Story {
 
 	@Override
 	public String toString() {
-		return "Story:\n" + title + " " + author + " --> " + link + "\n";
+		return title + " " + author + " --> " + link + "\n";
 	}
 	
 	
