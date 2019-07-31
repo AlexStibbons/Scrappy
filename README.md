@@ -1,13 +1,13 @@
 # Scrappy
 
-These are a couple of web scrapers made for my own convenience. Each of them extract all stories published in some of the SFF magazines I follow.
+These are a couple of web scrapers made for my own convenience. Each of them extracts all stories published in some of the SFF magazines I follow.
 
 
-I'd always been curious about what I was missing by not endlessly scrolling through a magazine's back issues. Was there a hidden jewel among them I didn't know about? Have I missed a new story by one of my favourite authors? Would I find a story that could teach me more about structure, character development, or plot?
+I'd always been curious about what I was missing by not endlessly scrolling through a magazine's back issues. Was there a hidden jewel among them I didn't know about? Had I missed a new story by one of my favourite authors? Would I find a story that could teach me more about structure, character development, or plot?
 
 It's a literary FOMO of sorts.
 
-Fortunately, I'm now able to solve it! Each of these web scrapers is tailor made to one of currently active SFF magazines. They're all fairly simple, but they do exactly what I need them to do.
+Fortunately, I'm now able to solve it! Each of these web scrapers is tailor-made for one of the currently active SFF magazines. They're all fairly simple, but they do exactly what I need them to do.
 
 ## java/scrappy-jsoup : The Dark Magazine
 
@@ -15,7 +15,7 @@ Fortunately, I'm now able to solve it! Each of these web scrapers is tailor made
 
 ### The scraper
 
-The scraper itself needs some refactoring. Personally, I don't think the scraper needs to be a separate initialized class. All the scraping methods can just be private static inside the main class. That would make it long, but seeing how it's really simple, and website specific (that is, not reusable for a different website), one long script would do just fine.
+The scraper itself needs some refactoring. Personally, I don't think the scraper needs to be a separate initialized class. All the scraping methods can just be private static inside the main class. That would make it long, but seeing how it's really simple, and website specific (that is, not reusable for a different website), one long script should do just fine.
 
 
 ## java/scrappy-xpath
