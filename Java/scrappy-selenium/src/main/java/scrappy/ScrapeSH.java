@@ -24,7 +24,6 @@ public class ScrapeSH {
 
 		// for extra convenience, set a String value for button that needs pressing
 		String loadMorePath = "//div[@class='load-more']"; // finds it
-		
 		String storyBlockPath = "//div[contains(@class, 'masonry-item')]"; // finds all story blocks
 		
 		// post element is class="post masonry-item" and includes
@@ -52,6 +51,11 @@ public class ScrapeSH {
 		
 		String author = storyBlock.findElement(By.xpath("div[@class='author']")).getText();
 		System.out.println("Story block author is " + author);
+		
+		// to load more, we can either
+		// click the button until there's no more button and then starts with story blocks
+		// or
+		// click button, capture response, extract data, click button, etc
 		
 		browser.close();
 	}
