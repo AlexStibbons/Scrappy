@@ -25,13 +25,13 @@ The scraper itself needs some refactoring. Personally, I don't think the scraper
 
 I'm putting ScrapeTor and ScrapeSH on hold for now.
 
-### Lightspeed magazine
+### Lightspeed magazine & Nightmate magazine
 
 [Lightspeed magazine](http://www.lightspeedmagazine.com/) is another monthly SFF magazine. 
 
 #### The scraper
 
-This time, one class (ScrapeLSM) contains all the necessary methods. I still need to make it more neat, more readable and add printing the results in a txt file.
+This time, one class (ScrapeLSM) contains all the necessary methods. The links to Lightspeed magazine are in the code, while the links to Nightmare magazine are in comments above appropriate methods - interchange them at will. 
 
 Now, for the process. The only thing that stands out here is the way I chose to iterate throught the page numbers. Since I didn't want to use a Set to gather all the links (I need the stories in chronological order), I wanted to get the stories on one page, go to the next page, get the stories there, etc. 
 
