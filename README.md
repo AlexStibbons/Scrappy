@@ -25,9 +25,11 @@ The scraper itself needs some refactoring. Personally, I don't think the scraper
 
 I'm putting ScrapeTor and ScrapeSH on hold for now.
 
-### Lightspeed magazine & Nightmate magazine
+### Lightspeed magazine & Nightmare magazine
 
-[Lightspeed magazine](http://www.lightspeedmagazine.com/) is another monthly SFF magazine. 
+[Lightspeed magazine](http://www.lightspeedmagazine.com/) is another monthly SFF magazine. To quote the about page: " In its pages, you will find science fiction: from near-future, sociological soft SF, to far-future, star-spanning hard SF—and fantasy: from epic fantasy, sword-and-sorcery, and contemporary urban tales, to magical realism, science-fantasy, and folktales."
+
+[Nightmare magazine](http://www.nightmare-magazine.com/) brings you dark tales. "In Nightmare’s pages, you will find all kinds of horror fiction, from zombie stories and haunted house tales, to visceral psychological horror."
 
 #### The scraper
 
